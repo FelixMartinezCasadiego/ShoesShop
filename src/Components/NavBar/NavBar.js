@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const NavBar = () => {
     return (
         <>
@@ -16,8 +17,8 @@ const NavBar = () => {
                     </button>
                     <h3>Logo</h3>
                     <div class="d-flex justify-content-between">
-                        <h5 class="mx-1">Buscador</h5>
-                        <h5 class="mx-4">carrito</h5>
+                        <h2 class="mx-1"><i class='bx bx-search-alt-2'></i></h2>
+                        <h2 class="mx-4"><i class='bx bx-cart'></i></h2>
                     </div>
 
                 </div>
