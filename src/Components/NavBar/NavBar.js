@@ -6,8 +6,8 @@ const NavBar = () => {
         <>
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-dark p-4">
-                    <h5 class="text-white h4">Collapsed content</h5>
-                    <span class="text-muted">Toggleable via the navbar brand.</span>
+                    <h5 class="text-white h4">Home</h5>
+                    <span class="text-muted">Search</span>
                 </div>
             </div>
             <nav class="navbar navbar-dark bg-dark bg-opacity-75">
@@ -17,7 +17,7 @@ const NavBar = () => {
                     </button>
                     <h3>Logo</h3>
                     <div class="d-flex justify-content-between">
-                        <h2 class="mx-1"><i class='bx bx-search-alt-2'></i></h2>
+                        <h2 class="mx-1 d-none d-sm-block"><i class='bx bx-search-alt-2'></i></h2>
                         <h2 class="mx-4"><i class='bx bx-cart'></i></h2>
                     </div>
 
