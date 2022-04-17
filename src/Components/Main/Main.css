@@ -1,7 +1,9 @@
+/* Background */
 .ColorBackFont{
     background-color: whitesmoke;
 }
 
+/* Estilos para h3 */
 h3{
     font-family: 'Poiret One', cursive;
     font-weight:bolder;

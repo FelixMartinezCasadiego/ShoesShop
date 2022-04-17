@@ -1,0 +1,27 @@
+/* Estilo para Imagenes destacadas */
+.ItemGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Zona responsive */
+@media screen and (max-width: 1024px) { 
+    .ItemGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ItemGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .ItemGrid{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
