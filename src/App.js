@@ -1,47 +1,32 @@
 // Estilos
 import './App.css';
 
-
 // Components
-// import Item from './Components/ItemList/Item';
-import Main from './Components/Main/Main';
 import NavBar from './Components/NavBar/NavBar';
-import ItemListContainer from './Components/ItemList/ItemListContainer';
+import Cart from './Components/Cart/Cart';
+import Home from './Components/Views/Home';
+import Search from './Components/Views/Search';
 
-// Firebase - Firestore
-// import { collection, query, getDocs} from 'firebase/firestore' ;
-// import { db } from './Firebase/firebaseConfig';
+// React Router Dom
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { CartProvider } from './Context/ItemsContext';
 
-// UseState and UseEffect
-// import { useEffect, useState } from 'react';
 
 function App() {
 
-  // const [productsData, setProductsData] = useState([]);
-  
-  // useEffect(() =>{
-  //   const getProducts = async () => {
-  //     const q = query(collection(db, 'Shoes'));
-  //     const docs = [];
-  //     const querySnapshot = await getDocs(q);
-  //     querySnapshot.forEach((doc) => {
-  //       docs.push({...doc.data(), id: doc.id});
-  //     });
-  //     setProductsData(docs); 
-  //   };
-  //   getProducts();
-  // }, []);
-
   return (
-    <div className="App">
-      <NavBar />
-      <Main />
-      <h3 className='SubTitle'>Featured Product</h3>
-      <ItemListContainer />
-      {/* {productsData.map((data) =>{
-        return <Item productsData={data} key={data.id} />
-      })} */}
-    </div>
+    <CartProvider>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/Cart' element={<Cart />} />
+            <Route path='/Search' element={<Search />} />
+          </Routes>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

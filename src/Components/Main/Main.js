@@ -3,7 +3,7 @@ import '../Main/Main.css';
 
 const Main = () =>{
     return(
-        
+        <>
         <div id="carouselExampleDark" class="carousel carousel-dark slide mt-4" data-bs-ride="carousel">
             <h3>Commercial Zone</h3>
             <div class="carousel-indicators">
@@ -40,6 +40,9 @@ const Main = () =>{
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+        <h3 className='SubTitle'>Featured Product</h3>
+        </>
         
     )
 }
