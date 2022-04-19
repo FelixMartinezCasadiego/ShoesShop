@@ -6,8 +6,8 @@ export function CartProvider ({children}){
 
     const [itemsShoes, setItemsShoes] = useState([]);
 
-    const addToCart = ( name , price ) => {
-        setItemsShoes((preState) => [...preState, (name, price)]);
+    const addToCart = ( title , price ) => {
+        setItemsShoes((prevState) => [...prevState, (title, price)]);
     };
 
     return(

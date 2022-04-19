@@ -2,3 +2,7 @@
     width: 80px;
     margin-left: 20px;
 }
+
+.DecorationNone{
+    text-decoration: none;
+}
