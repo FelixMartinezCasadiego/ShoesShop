@@ -1,17 +1,14 @@
-import React, { createContext, useState } from "react";
+import React, { createContext } from "react";
+import useCartState from "../hooks/useCartState";
 
 const CartContext = createContext();
 
 export function CartProvider ({children}){
 
-    const [itemsShoes, setItemsShoes] = useState([]);
-
-    const addToCart = ( title , price ) => {
-        setItemsShoes((prevState) => [...prevState, (title, price)]);
-    };
+    const cart = useCartState();
 
     return(
-        <CartContext.Provider value={{itemsShoes, addToCart}}>
+        <CartContext.Provider value={cart}>
             {children}
         </CartContext.Provider>
     )

@@ -14,7 +14,7 @@ import { useContext } from 'react';
 const NavBar = () => {
 
     const {itemsShoes} = useContext(CartContext);
-
+    console.log(itemsShoes)
     return (
         <>
             <div class="collapse sticky-top sticky-sm-top sticky-md-top" id="navbarToggleExternalContent">
@@ -36,7 +36,7 @@ const NavBar = () => {
                         <Link to="/Cart" className='DecorationNone'>
                             <h2 class="mx-4 text-white">
                                 <i class='bx bx-cart'></i>
-                                <span> {itemsShoes.length} </span>
+                                <span> {itemsShoes.cart.length} </span>
                             </h2>
                         </Link>
                         
