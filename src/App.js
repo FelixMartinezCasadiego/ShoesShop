@@ -1,6 +1,9 @@
 // Estilos
 import './App.css';
 
+// Box Icons
+import 'boxicons';
+
 // Components
 import NavBar from './Components/NavBar/NavBar';
 import Cart from './Components/Cart/Cart';
@@ -19,6 +22,7 @@ function App() {
       <Router>
         <div className="App">
           <NavBar />
+          <Cart />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Cart' element={<Cart />} />
