@@ -13,7 +13,7 @@ import { useContext } from 'react';
 
 const NavBar = () => {
 
-    const { itemsShoes } = useContext(CartContext);
+    const value = useContext(CartContext);
 
     return (
         <>
@@ -33,10 +33,10 @@ const NavBar = () => {
                         <Link to='/Search' className='DecorationNone'>
                             <h2 class="mx-1 d-none d-sm-block text-white"><i class='bx bx-search-alt-2'></i></h2>
                         </Link>
-                        <div className='DecorationNone' >
+                        <div className='DecorationNone' onClick={value.showCart.toggleMenu} >
                             <h2 class="mx-4 text-white" >
                                 <i class='bx bx-cart'></i>
-                                <span> {itemsShoes.cart.length} </span>
+                                <span> {value.cart.itemsShoes.cart.length} </span>
                             </h2>
                         </div>
                         

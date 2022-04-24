@@ -1,12 +1,8 @@
 import { useState } from "react";
 
-const Show = () =>{
+const Show = () => {
 
     const [menu, setMenu] = useState(false);
-
-    const toggleFalse = () => {
-        setMenu(false)
-    };
 
     const toggleMenu = () =>{
         setMenu(!menu)
@@ -17,7 +13,6 @@ const Show = () =>{
 
     return {
         menu,
-        toggleFalse, 
         toggleMenu,
         show1,
         show2

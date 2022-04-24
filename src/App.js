@@ -20,6 +20,7 @@ function App() {
         <div className="App">
           <NavBar />
           <Cart />
+          {/* {true ? <Cart /> : null} */}
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Search' element={<Search />} />
