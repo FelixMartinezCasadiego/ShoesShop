@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Estilos
 import '../NavBar/NavBar.css'
@@ -14,6 +14,7 @@ import { useContext } from 'react';
 const NavBar = () => {
 
     const value = useContext(CartContext);
+    //const [search, setSearch] = useState(true)
 
     return (
         <>
@@ -30,8 +31,9 @@ const NavBar = () => {
                     </button>
                     <Link to='/' className='DecorationNone'><h3 className='text-white'>Logo</h3></Link>
                     <div class="d-flex justify-content-between">
+                        {/* {search && <Input />} */}
                         <Link to='/Search' className='DecorationNone'>
-                            <h2 class="mx-1 d-none d-sm-block text-white"><i class='bx bx-search-alt-2'></i></h2>
+                            <h2  class="mx-1 d-none d-sm-block text-white"><i class='bx bx-search-alt-2'></i></h2>
                         </Link>
                         <div className='DecorationNone' onClick={value.showCart.toggleMenu} >
                             <h2 class="mx-4 text-white" >

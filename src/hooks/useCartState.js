@@ -2,17 +2,28 @@ import { useState } from "react";
 
 const useCartState = () =>{
     
-    // Estado de counter
-    const [counter, setCounter] = useState(1)
-
         // Zona de manejo de incremento y disminución
-        const handleUp = ()=>{
-            setCounter(counter => counter + 1)
+        const handleUp = (shoe)=>{
+            setItemsShoes({
+                ...itemsShoes,
+                cart: itemsShoes.cart.map((obj) =>{
+                    return obj.id === shoe.id ? {...shoe, qty: shoe.qty + 1} : obj
+                })
+            })
         }
-        const handleDown = ()=>{
-            if(counter !== 1){
-                setCounter(counter => counter - 1)
-            }
+        const handleDown = (shoe)=>{
+            setItemsShoes({
+                ...itemsShoes,
+                cart: itemsShoes.cart.map((obj) =>{
+                    if(shoe.qty > 1){
+                        return obj.id === shoe.id ? {...shoe, qty: shoe.qty - 1} : obj
+                    }
+                    else{
+                        return obj
+                    }
+
+                })
+            })
         }
 
     // Estado Inicial del carrito
@@ -26,32 +37,27 @@ const useCartState = () =>{
 
         if(shoes){
 
-            const arr = itemsShoes.cart.map((obj) =>{
-                return obj.id === product.id ? {...shoes, qty: shoes.qty + 1} : obj
-            })
             setItemsShoes(
                 
                 {
                     ...itemsShoes,
-                    cart: arr 
+                    cart: itemsShoes.cart.map((obj) =>{
+                        return obj.id === product.id ? {...shoes, qty: shoes.qty + 1} : obj
+                    })
                 }
                 
             )
+
         }
         else{
             setItemsShoes(
-                {...itemsShoes.cart, cart: [...itemsShoes.cart, {...product, qty: 1}] }
+                {
+                    ...itemsShoes,
+                     cart: [...itemsShoes.cart, {...product, qty: 1}] 
+                }
             )
         }
 
-        setItemsShoes(
-            {
-                ...itemsShoes , 
-                cart: [
-                    ...itemsShoes.cart, product
-                ]
-            }
-        )
     }
 
     // Eliminar del carrito (CartItem)
@@ -75,13 +81,13 @@ const useCartState = () =>{
     // Total de compra carrito (Cart)
     const totalPrice = () =>{
 
-        let total = 0;
+        let total = 0 ;
 
         for (let i = 0; i < itemsShoes.cart.length; i++) {
 
-            const product = itemsShoes.cart[i].price;
+            const product = itemsShoes.cart[i].price*itemsShoes.cart[i].qty;
 
-            total = product + total
+            total = product + total ;
             
         }
 
@@ -89,13 +95,11 @@ const useCartState = () =>{
     }
 
 
-
     return {
         itemsShoes,
         addToCart,
         removeFromCart, 
         totalPrice,
-        counter,
         handleDown,
         handleUp
     }
