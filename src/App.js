@@ -11,7 +11,6 @@ import Search from './Components/Views/Search';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CartProvider } from './Context/ItemsContext';
 
-
 function App() {
 
   return (
