@@ -1,6 +1,6 @@
 # ShoesShop
 
-This repository is about a simple shoes website simulation, where you can see the items, select the item that you like it and save in the cart, can see the cart and you can proce to pay the items that you choose.
+This repository is about a simple shoes website simulation, where you can see the items, select the item that you like it and save in the cart, you can see the cart and proceed to pay for the items that you choose.
 
 ## Description
 
@@ -22,6 +22,10 @@ I used for the creation of this website: React JS, Firebase, Bootstrap.
 
 [![Responsive-1.png](https://i.postimg.cc/CxvNCshp/Responsive-1.png)](https://postimg.cc/bZtkpbSm)
 
+
+
 [![Responsive-2.png](https://i.postimg.cc/kXsF9vtR/Responsive-2.png)](https://postimg.cc/VdSbWMgz)
+
+
 
 [![Responsive-3.png](https://i.postimg.cc/Twj50TV5/Responsive-3.png)](https://postimg.cc/sQX2Dd03)
